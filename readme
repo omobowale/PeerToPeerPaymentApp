@@ -14,6 +14,7 @@ v. users transferring their money out of the app (i.e withdrawing)
 
 
 
+
 ==== TECHNOLOGY ====
 Node
 Express
@@ -21,10 +22,36 @@ Chai
 
 
 
+
 ==== CONFIGURATION AND SETUP =====
 1. Change directory to the root directory.
 2. Run npm install to download and install all the necessary dependencies.
-3. To run the unit tests, simple run : "npm test" in the root directory
+3. To run the server, simply run : "npm run start" or "npm run serve".
+4. You can test endpoints using POSTMAN
+5. To run the unit tests, simply run : "npm test" in the root directory.
 
 
 
+
+==== END POINTS ====
+GET /users => returns all users in the app
+
+POST /users 
+requests => [body : firstname, lastname]
+usage => adds a new user to the app
+
+POST /users/:id/deposit 
+requests => [params : source_user_id]
+usage => deposits a given amount into the given source user id
+
+POST /users/:id/transfer 
+requests => [params : source_user_id, body: amount, recipient_user_id  ]
+usage => transfers a given amount from a source user id to the recipient user id
+
+POST /users/:id/withdraw 
+requests => [params : source_user_id, body: amount]
+usage => withdraws a given amount from the source user id
+
+GET /users/:id/check-balance
+request => [params: source_user_id]
+usage => returns the balance of the source user id

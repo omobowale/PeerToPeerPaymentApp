@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha --timeout 100000",
     "serve": "nodemon index.js",
-    "start": "SET NODE_ENV=dev && node index.js"
+    "start": "node index.js"
   },
   "author": "Omobowale Otuyiga",
   "license": "ISC",
