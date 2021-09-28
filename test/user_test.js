@@ -60,7 +60,7 @@ describe('Users', () => {
     /*
     * Test the /POST route for adding a new user
     */
-    describe('POST users', () => {
+    describe('POST /users', () => {
         it('it should create a new user', (done) => {
             const user = {
                 firstname: "firstname 2",
