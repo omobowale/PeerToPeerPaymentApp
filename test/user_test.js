@@ -63,8 +63,8 @@ describe('Users', () => {
     describe('POST /users', () => {
         it('it should create a new user', (done) => {
             const user = {
-                firstname: "firstname 2",
-                lastname: "lastname 2"
+                firstname: "dummy firstname",
+                lastname: "dummy lastname"
             }
             chai.request(app)
                 .post('/users')

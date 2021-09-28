@@ -4,12 +4,17 @@ const users = require("../Data/users.json");
 
 class UserController {
 
+    //Method to return all users in the Data/users.json file
     allUsers = async () => {
 
         return users;
 
     }
 
+    //Method to add a new user
+    //Takes a user object as parameter
+    //Returns a new user if no errors
+    //Returns null otherwise
     addUser = async (user) => {
         const newUser = new User(user.firstname, user.lastname);
         users.push(newUser);
@@ -23,6 +28,10 @@ class UserController {
         })
     }
 
+
+    //Method to deposit an amount of money
+    //Takes the id of the user and amount to be deposited as parameters
+    //Returns an object containing the details of the deposit.
     deposit = async (id, amount) => {
 
         const userId = users.findIndex((user) => user["id"] == id);
@@ -43,6 +52,9 @@ class UserController {
         })
     }
 
+    //Method to transfer a given amount of money
+    //Takes the id of the user, the id of the receiver and amount to be deposited as parameters
+    //Returns an object containing the details of the transfer.
     transfer = async (id, receiverId, amount) => {
         const userId = users.findIndex((user) => user["id"] == id);
         const recId = users.findIndex((user) => user["id"] == receiverId);
@@ -96,6 +108,10 @@ class UserController {
         })
     }
 
+
+    //Method to withdraw a given amount of money
+    //Takes the id of the user, and amount to be deposited as parameters
+    //Returns an object containing the details of the withdrawal.
     withdraw = async (id, amount) => {
 
         const userId = users.findIndex((user) => user["id"] == id);
@@ -123,6 +139,10 @@ class UserController {
         })
     }
 
+
+    //Method to check the balaance of a given user
+    //Takes the id of the user
+    //Returns an object containing the details of the user's balance
     checkBalance = async (id) => {
         const userId = users.findIndex((user) => user["id"] == id);
 
